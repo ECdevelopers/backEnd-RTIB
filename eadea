@@ -1,0 +1,16 @@
+// // Periksa apakah user ada di guild
+      // const guildMember = await getGuildMember(userData.id, process.env.DISCORD_BOT_TOKEN);
+
+      // if (!guildMember) {
+      //   res.writeHead(403, { "Content-Type": "text/plain" });
+      //   return res.end("Access Denied: You are not in the server.");
+      // }
+
+      // // Periksa apakah user memiliki role yang diperlukan
+      // if (!guildMember.roles.includes(ROLE_ID)) {
+      //   res.writeHead(403, { "Content-Type": "text/plain" });
+      //   return res.end("Access Denied: You do not have the required role.");
+      // }
+
+      // res.writeHead(200, { "Content-Type": "application/json" });
+      // return res.end(JSON.stringify(userData, null, 2));
