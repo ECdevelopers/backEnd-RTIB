@@ -1,13 +1,12 @@
-
-
+require("dotenv").config();
 
 async function getAccessToken(code) {
   const body = new URLSearchParams({
-    client_id: CLIENT_ID,
-    client_secret: CLIENT_SECRET,
+    client_id: process.env.DISCORD_CLIENT_ID,
+    client_secret: process.env.DISCORD_CLINET_SECRET,
     grant_type: "authorization_code",
     code,
-    redirect_uri: REDIRECT_URI,
+    redirect_uri: process.env.DISCORD_REDIRECT_URL,
   });
 
   const response = await fetch("https://discord.com/api/oauth2/token", {
@@ -30,7 +29,7 @@ async function getDiscordUser(accessToken) {
 
 async function getGuildMember(userId, accessToken) {
   try {
-    const response = await fetch(`https://discord.com/api/guilds/${GUILD_ID}/members/${userId}`, {
+    const response = await fetch(`https://discord.com/api/guilds/${process.env.DISCORD_GUILD_ID}/members/${userId}`, {
       method: "GET",
       headers: {
         Authorization: `Bot ${accessToken}`, // Gunakan bot token, bukan user token!

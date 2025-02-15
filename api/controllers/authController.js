@@ -4,9 +4,6 @@ const pool = require('../db');
 const { parseRequestBody } = require('../middlewares/bodyParser');
 require("dotenv").config();
 
-
-require('dotenv').config();
-
 const registerUser = async (req, res) => {
   try {
     const { name, email, password } = await parseRequestBody(req);
